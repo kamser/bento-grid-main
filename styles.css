@@ -15,5 +15,60 @@
 body{
     margin: 0;
     font-family: 'DM-Sans', sans-serif;
+    font-style: normal;
+    max-width: 1440px;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+p{
+    font-size: 18px;
+}
+
+span{
     font-style: italic;
 }
+
+section{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    gap: 15px;
+}
+
+section div{
+    border-radius: 10px;
+}
+
+
+section div:first-child,
+section div:nth-child(5){
+    background: hsl(256, 67%, 59%);
+    color: hsl(31, 66%, 93%);
+}
+
+section div:nth-child(3),
+section div:last-child(8){
+    background: hsl(39, 100%, 71%);
+    
+}
+
+section div:nth-child(2),
+section div:nth-child(6){
+    background: hsl(0, 0%, 100%);
+}
+
+section div:nth-child(7){
+    background: hsl(31, 66%, 93%);
+}
+
+
+section div:nth-child(4){
+    background: hsl(254, 88%, 90%);
+}
+
+
+
