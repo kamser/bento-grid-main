@@ -14,11 +14,14 @@
 
 body{
     margin: 0;
+    height: 100vh;
     font-family: 'DM-Sans', sans-serif;
     font-style: normal;
+    background: hsl(250, 11%, 89%);
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
+    align-content: center;
     
 }
 
@@ -26,20 +29,12 @@ p{
     font-size: 18px;
 }
 
-span{
-    font-style: italic;
-}
-
-img{
-    width: 200px;
-    height: 100px;
-}
-
 section{
-    max-width: 1440px;
+    max-width: 1000px;
+    max-height: 70vh;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(4, 1fr);
+    grid-template-rows: repeat(10, 1fr);
     gap: 15px;
 }
 
@@ -55,7 +50,7 @@ section div:nth-child(5){
 }
 
 section div:nth-child(3),
-section div:last-child(8){
+section div:last-child{
     background: hsl(39, 100%, 71%);
     
 }
@@ -65,14 +60,155 @@ section div:nth-child(6){
     background: hsl(0, 0%, 100%);
 }
 
+/*Create and Schedule*/
 section div:nth-child(7){
     background: hsl(31, 66%, 93%);
+    grid-column: 1 / 2;
+    grid-row: 1 / -6;
 }
 
-
+/*Schedule to social Media*/
 section div:nth-child(4){
     background: hsl(254, 88%, 90%);
+    grid-column: 4 / -1;
+    grid-row: 1 / -4;
+
+    padding: 0 0 0 20px;
+
+    text-align: start;
+    font-size: 24px;
+
+    overflow: hidden;
+
+    display: block;
 }
+
+/*Social Media*/
+section div:first-child{
+    grid-column: 2 / 4;
+    grid-row: 1 / 5;
+
+    text-align: center;
+    font-size: 30px;
+
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+}
+
+/*Grow followers*/
+section div:nth-child(5){
+    grid-column: 3 / -1;
+    grid-row: 8 / -1;
+
+    padding: 20px;
+
+    text-align: start;
+    font-size: 24px;
+
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    
+}
+
+/*Write your content*/
+section div:last-child{
+    grid-column: 1 / 2;
+    grid-row: 6 / -1;
+}
+
+/*>56%*/
+section div:nth-child(6){
+    grid-column: 2 / 3;
+    grid-row: 8 / -1;
+
+    padding: 20px;
+
+    display: block;
+}
+
+section div:nth-child(6) span{
+    text-align: start;
+    font-size: 60px;
+}
+
+/*Manage multiple accounts*/
+section div:nth-child(2){
+    grid-column: 2 / 3;
+    grid-row: 5 / 8;
+
+    padding: 20px;
+
+    overflow: hidden;
+
+    display: block;
+}
+
+section div:nth-child(2) span{
+    text-align: start;
+    font-size: 30px;
+}
+
+section div:nth-child(3){
+    grid-column: 3 / 4;
+    grid-row: 5 / 8;
+
+    text-align: start;
+    font-size: 24px;
+
+    padding: 0 10px 0 10px;
+
+    overflow: hidden;
+
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+
+    
+}
+
+#five-stars{
+    max-width: 150px;
+    max-height: 35px;
+}
+
+#multiple-platforms{
+    max-width: 290px;
+    max-height: 60px;
+}
+
+#consistent-schedule{
+    max-width: 170px;
+    max-height: 200px;
+}
+
+#schedule-posts{
+    max-width: 360px;
+    max-height: 320px;
+}
+
+#grow-followers{
+    max-width: 230px;
+    max-height: 200px;
+}
+
+#audience-growth{
+    max-width: 150px;
+    max-height: 55px;
+}
+
+#create-post{
+    max-width: 150px;
+    max-height: 70px;
+}
+
+#ai-content{
+    max-width: 150px;
+    max-height: 70px;
+}
+
+
 
 
 
