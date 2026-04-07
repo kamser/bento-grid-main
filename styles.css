@@ -65,6 +65,26 @@ section div:nth-child(7){
     background: hsl(31, 66%, 93%);
     grid-column: 1 / 2;
     grid-row: 1 / -6;
+
+    padding: 20px;
+
+    overflow: hidden;
+
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-items: center;
+    gap: 20px;
+}
+
+section div:nth-child(7) p{
+    text-align: start;
+    font-size: 34px;
+}
+
+section div:nth-child(7) span{
+    font-style: italic;
+    color: hsl(256, 67%, 59%);
 }
 
 /*Schedule to social Media*/
@@ -96,6 +116,10 @@ section div:first-child{
     align-items: center;
 }
 
+section div:first-child span{
+    font-style: italic;
+}
+
 /*Grow followers*/
 section div:nth-child(5){
     grid-column: 3 / -1;
@@ -116,6 +140,17 @@ section div:nth-child(5){
 section div:last-child{
     grid-column: 1 / 2;
     grid-row: 6 / -1;
+
+    padding: 20px;
+
+    overflow: hidden;
+
+    display: block;
+}
+
+section div:last-child span{
+    text-align: start;
+    font-size: 34px;
 }
 
 /*>56%*/
@@ -150,6 +185,7 @@ section div:nth-child(2) span{
     font-size: 30px;
 }
 
+/*Maintaina consistent positing*/
 section div:nth-child(3){
     grid-column: 3 / 4;
     grid-row: 5 / 8;
@@ -204,8 +240,9 @@ section div:nth-child(3){
 }
 
 #ai-content{
-    max-width: 150px;
-    max-height: 70px;
+    padding-top: 50px;
+    max-width: 210px;
+    max-height: 210px;
 }
 
 
