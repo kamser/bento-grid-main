@@ -104,7 +104,21 @@ section div:nth-child(4){
 
     overflow: hidden;
 
-    display: block;
+    /* display: block; */
+
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: flex-start;
+    justify-content: space-around;
+
+}
+
+section div:nth-child(4) h3{
+    font-size: clamp(1rem, calc(1vw + .5rem), 1.3rem);
+}
+
+section div:nth-child(4) p{
+    font-size: clamp(.8rem, calc(1vw + .1rem), 1rem);
 }
 
 /*Social Media*/
@@ -113,7 +127,7 @@ section div:first-child{
     grid-row: 1 / 5;
 
     text-align: center;
-    font-size:  clamp(.8rem, calc(2vw + 1rem), 2rem);
+    font-size:  clamp(.8rem, calc(2vw + 1rem), 1.7rem);
 
     display: flex;
     flex-flow: column nowrap;
@@ -122,12 +136,19 @@ section div:first-child{
 
 section div:first-child h1{
     padding-top: .5em;
-    padding-bottom: .5em;
+    padding-bottom: .2em;
 }
 
 section div:first-child span{
     font-style: italic;
 }
+
+#ten-times{
+    font-style: normal;
+    color: hsl(62, 100%, 80%);
+}
+
+
 
 /*Grow followers*/
 section div:nth-child(5){
@@ -306,18 +327,9 @@ section div:nth-child(3) img{
 
     /*Schedule to social Media*/
     section div:nth-child(4){
-        background: hsl(254, 88%, 90%);
         grid-column: 3 / -1;
         grid-row: 1 / 4;
 
-        padding: 0 0 0 20px;
-
-        text-align: start;
-        font-size: 2rem;
-
-        overflow: hidden;
-
-        display: block;
     }
 
     /*Manage multiple accounts*/
@@ -534,13 +546,6 @@ section div:nth-child(3) img{
         background: hsl(254, 88%, 90%);
         grid-column: 1;
         grid-row: 5 / 7;
-
-        text-align: start;
-        font-size: 2rem;
-
-        overflow: hidden;
-
-        display: block;
     }
 
     /*Grow followers*/
