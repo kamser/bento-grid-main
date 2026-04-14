@@ -51,9 +51,9 @@ body{
     font-style: normal;
     background: var(--body-bg-color);
     display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
-    align-content: center;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: space-around;
     
 }
 
@@ -61,7 +61,7 @@ p{
     font-size: clamp(0.8rem, 2vw + 1rem, 1.1rem);
 }
 
-section{
+main{
     max-width: 1000px;
     max-height: 70vh;
     padding-left: min(1.5em, 6%);
@@ -72,30 +72,92 @@ section{
     gap: 1em;
 }
 
-section div{
+main div{
     border-radius: 10px;
 }
 
+/*dark mode switch*/
+.dark-mode-switch{
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
 
-section div:first-child,
-section div:nth-child(5){
+.dark-mode-switch input{
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider{
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before{
+    position: absolute;
+    content: url('./assets/images/sunny_24dp_E3E3E3_FILL1_wght400_GRAD0_opsz24.svg');
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked + .slider{
+    background-color: #2196F3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+    content: url('./assets/images/dark_mode_24dp_E3E3E3_FILL1_wght400_GRAD0_opsz24.svg');
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+/*Set the styles for the cards*/
+
+main div:first-child,
+main div:nth-child(5){
     background: var(--social-media-and-grow-followers-cards-color);
     color: var(--primary-font-color);
 }
 
-section div:nth-child(3),
-section div:last-child{
+main div:nth-child(3),
+main div:last-child{
     background: var(--write-your-content-and-maintain-a-consistent-card-color);
     
 }
 
-section div:nth-child(2),
-section div:nth-child(6){
+main div:nth-child(2),
+main div:nth-child(6){
     background: var(--manage-multiple-and-56-card-color);
 }
 
 /*Create and Schedule*/
-section div:nth-child(7){
+main div:nth-child(7){
     background: var(--create-and-schedule-card-color);
     grid-column: 1 / 2;
     grid-row: 1 / -6;
@@ -109,18 +171,18 @@ section div:nth-child(7){
     gap: 1.5rem;
 }
 
-section div:nth-child(7) h2{
+main div:nth-child(7) h2{
     text-align: start;
     font-size: clamp(.8rem, calc(2vw + 1rem), 2.2rem);
 }
 
-section div:nth-child(7) span{
+main div:nth-child(7) span{
     font-style: italic;
     color: var(--secundary-highlight-color);
 }
 
 /*Schedule to social Media*/
-section div:nth-child(4){
+main div:nth-child(4){
     background: var(--schedule-to-social-card-color);
     grid-column: 4 / -1;
     grid-row: 1 / -4;
@@ -139,16 +201,16 @@ section div:nth-child(4){
 
 }
 
-section div:nth-child(4) h3{
+main div:nth-child(4) h3{
     font-size: clamp(1rem, calc(1vw + .5rem), 1.3rem);
 }
 
-section div:nth-child(4) p{
+main div:nth-child(4) p{
     font-size: clamp(.8rem, calc(1vw + .1rem), 1rem);
 }
 
 /*Social Media*/
-section div:first-child{
+main div:first-child{
     grid-column: 2 / 4;
     grid-row: 1 / 5;
 
@@ -160,12 +222,12 @@ section div:first-child{
     align-items: center;
 }
 
-section div:first-child h1{
+main div:first-child h1{
     padding-top: min(.5em, 4%);
     padding-bottom: min(.2em, 3%);
 }
 
-section div:first-child span{
+main div:first-child span{
     font-style: italic;
 }
 
@@ -177,7 +239,7 @@ section div:first-child span{
 
 
 /*Grow followers*/
-section div:nth-child(5){
+main div:nth-child(5){
     grid-column: 3 / -1;
     grid-row: 8 / -1;
 
@@ -195,7 +257,7 @@ section div:nth-child(5){
 }
 
 /*Write your content*/
-section div:last-child{
+main div:last-child{
     grid-column: 1 / 2;
     grid-row: 6 / -1;
 
@@ -204,13 +266,13 @@ section div:last-child{
     display: block;
 }
 
-section div:last-child h2{
+main div:last-child h2{
     text-align: start;
     font-size: clamp(.7rem, calc(2vw + 1rem), 2rem);;
 }
 
 /*>56%*/
-section div:nth-child(6){
+main div:nth-child(6){
     grid-column: 2 / 3;
     grid-row: 8 / -1;
 
@@ -226,13 +288,13 @@ section div:nth-child(6){
 
 }
 
-section div:nth-child(6) h2{
+main div:nth-child(6) h2{
     font-size: clamp(2.5rem, 2vw + 1rem, 5.5rem);
 }
 
 
 /*Manage multiple accounts*/
-section div:nth-child(2){
+main div:nth-child(2){
     grid-column: 2 / 3;
     grid-row: 5 / 8;
 
@@ -246,13 +308,13 @@ section div:nth-child(2){
     flex-flow: row wrap;
 }
 
-section div:nth-child(2) span{
+main div:nth-child(2) span{
     text-align: start;
     font-size: clamp(1.5rem, 1vw + 1rem, 2rem);
 }
 
 /*Maintaina consistent positing*/
-section div:nth-child(3){
+main div:nth-child(3){
     grid-column: 3 / 4;
     grid-row: 5 / 8;
 
@@ -273,7 +335,7 @@ section div:nth-child(3){
     
 }
 
-section div:nth-child(3) img{
+main div:nth-child(3) img{
     flex-shrink: 2;
 }
 
@@ -322,7 +384,7 @@ section div:nth-child(3) img{
 /*First break point at 1000px*/
 
 @media only screen and (max-width: 1000px) {
-    section{
+    main{
         min-width: 600px;
         max-height: 70vh;
         display: grid;
@@ -332,26 +394,26 @@ section div:nth-child(3) img{
     }
 
     /*Social Media*/
-    section div:first-child{
+    main div:first-child{
         grid-column: 1 / 3;
         grid-row: 1 / 3;
     }
 
     /*Schedule to social Media*/
-    section div:nth-child(4){
+    main div:nth-child(4){
         grid-column: 3 / -1;
         grid-row: 1 / 4;
 
     }
 
     /*Manage multiple accounts*/
-    section div:nth-child(2){
+    main div:nth-child(2){
         grid-column: 1 / 2;
         grid-row: 3 / 4;
     }
 
     /*Maintaina consistent positing*/
-    section div:nth-child(3){
+    main div:nth-child(3){
         grid-column: 2 / 3;
         grid-row: 3 / 4;
     }
@@ -359,7 +421,7 @@ section div:nth-child(3) img{
     
 
     /*Grow followers*/
-    section div:nth-child(5){
+    main div:nth-child(5){
         grid-column: 2 / -1;
         grid-row: 4 / 5;
 
@@ -368,24 +430,24 @@ section div:nth-child(3) img{
     }
 
     /*>56%*/
-    section div:nth-child(6){
+    main div:nth-child(6){
         grid-column: 1 / 2;
         grid-row: 4 / 5;
     }
 
     /*Create and Schedule*/
-    section div:nth-child(7){
+    main div:nth-child(7){
         grid-column: 1 / 2;
         grid-row: 5 / 7;
     }
 
-    section div:nth-child(7) p{
+    main div:nth-child(7) p{
         text-align: start;
         font-size: 2rem;
     }
 
     /*Write your content*/
-    section div:last-child{
+    main div:last-child{
         grid-column: 2 / 3;
         grid-row: 5 / 7;
     }
@@ -395,7 +457,7 @@ section div:nth-child(3) img{
 /*Second break point at 724px*/
 
 @media only screen and (max-width: 724px) {
-    section{
+    main{
         min-width: 724px;
         max-height: 70vh;
         display: grid;
@@ -405,55 +467,55 @@ section div:nth-child(3) img{
     }
 
     /*Social Media*/
-    section div:first-child{
+    main div:first-child{
         grid-column: 1 / 3;
         grid-row: 1 / 3;
     }
 
     /*Manage multiple accounts*/
-    section div:nth-child(2){
+    main div:nth-child(2){
         grid-column: 1 / 2;
         grid-row: 3 / 4;
     }
 
     /*Maintaina consistent positing*/
-    section div:nth-child(3){
+    main div:nth-child(3){
         grid-column: 2 / 3;
         grid-row: 3 / 4;
     }
 
      /*>56%*/
-    section div:nth-child(6){
+    main div:nth-child(6){
         grid-column: 1 / 2;
         grid-row: 4 / 5;
     }
 
     /*Create and Schedule*/
-    section div:nth-child(7){
+    main div:nth-child(7){
         grid-column: 1 / 2;
         grid-row: 5 / 7;
     }
 
-    section div:nth-child(7) p{
+    main div:nth-child(7) p{
         text-align: start;
         font-size: 2rem;
     }
 
     /*Write your content*/
-    section div:last-child{
+    main div:last-child{
         grid-column: 2 / 3;
         grid-row: 5 / 7;
     }
 
       /*Grow followers*/
-    section div:nth-child(5){
+    main div:nth-child(5){
         grid-column: 1 / 3;
         grid-row: 7 / 8;
         
     }
 
     /*Schedule to social Media*/
-    section div:nth-child(4){
+    main div:nth-child(4){
         grid-column: 1 / 3;
         grid-row: 8 / 10;
 
@@ -469,7 +531,7 @@ section div:nth-child(3) img{
 /*last break point at 394px*/
 
 @media only screen and (max-width: 375px) {
-    section{
+    main{
         min-width: 375px;
         max-height: 70vh;
         display: grid;
@@ -480,19 +542,19 @@ section div:nth-child(3) img{
     }
 
     /*Social Media*/
-    section div:first-child{
+    main div:first-child{
         grid-column: 1;
         grid-row: 1 / 3;
     }
 
     /*Manage multiple accounts*/
-    section div:nth-child(2){
+    main div:nth-child(2){
         grid-column: 1;
         grid-row: 3 / 4;
     }
 
     /*Maintaina consistent positing*/
-    section div:nth-child(3){
+    main div:nth-child(3){
         grid-column: 1;
         grid-row: 4 / 5;
 
@@ -503,13 +565,13 @@ section div:nth-child(3) img{
     }
 
     /*Schedule to social Media*/
-    section div:nth-child(4){
+    main div:nth-child(4){
         grid-column: 1;
         grid-row: 5 / 7;
     }
 
     /*Grow followers*/
-    section div:nth-child(5){
+    main div:nth-child(5){
         grid-column: 1;
         grid-row: 7 / 9;
 
@@ -522,7 +584,7 @@ section div:nth-child(3) img{
     }
 
     /*>56%*/
-    section div:nth-child(6){
+    main div:nth-child(6){
         grid-column: 1;
         grid-row: 9 / 10;
 
@@ -531,17 +593,17 @@ section div:nth-child(3) img{
     }
 
     /*Create and Schedule*/
-    section div:nth-child(7){
+    main div:nth-child(7){
         grid-column: 1;
         grid-row: 10 / 11;
     }
 
-    section div:nth-child(7) img{
+    main div:nth-child(7) img{
         align-self: flex-start;
     }
 
     /*Write your content*/
-    section div:last-child{
+    main div:last-child{
         grid-column: 1;
         grid-row: 11 / 13;
     }
