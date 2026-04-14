@@ -12,6 +12,34 @@
     font-style: italic;
 }
 
+:root{
+    --social-media-and-grow-followers-cards-color: hsl(256, 67%, 59%);
+    --schedule-to-social-card-color: hsl(254, 88%, 90%);
+    --body-bg-color: hsl(250, 11%, 89%);
+    --write-your-content-and-maintain-a-consistent-card-color: hsl(39, 100%, 71%);
+    --create-and-schedule-card-color: hsl(31, 66%, 93%);
+    --manage-multiple-and-56-card-color: hsl(0, 0%, 100%);
+
+    --primary-font-color: hsl(0, 0%, 100%);
+    --secundary-font-color: hsl(0, 0%, 0%);
+    --first-highlight-color: hsl(62, 100%, 80%);
+    --secundary-highlight-color: hsl(256, 67%, 59%);
+}
+
+.dark-mode{
+    --social-media-and-grow-followers-cards-color: hsl(195, 68%, 46%);
+    --schedule-to-social-card-color: hsl(195, 77%, 68%);
+    --body-bg-color: hsl(0, 0%, 4%);
+    --write-your-content-and-maintain-a-consistent-card-color: hsl(104, 62%, 46%);
+    --create-and-schedule-card-color: hsl(93, 72%, 58%);
+    --manage-multiple-and-56-card-color: hsl(105, 9%, 18%);
+
+    --primary-font-color: hsl(0, 6%, 90%);
+    --secundary-font-color: hsl(0, 0%, 86%);
+    --first-highlight-color: hsl(62, 100%, 66%);
+    --secundary-highlight-color: hsl(190, 67%, 59%);
+}
+
 *{
     margin: 0;
     padding: 0;
@@ -21,7 +49,7 @@ body{
     min-height: 100vh;
     font-family: 'DM-Sans', sans-serif;
     font-style: normal;
-    background: hsl(250, 11%, 89%);
+    background: var(--body-bg-color);
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
@@ -36,8 +64,8 @@ p{
 section{
     max-width: 1000px;
     max-height: 70vh;
-    padding-left: 1.5em;
-    padding-right: 1.5em;
+    padding-left: min(1.5em, 6%);
+    padding-right: min(1.5em, 6%);
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(10, 1fr);
@@ -51,24 +79,24 @@ section div{
 
 section div:first-child,
 section div:nth-child(5){
-    background: hsl(256, 67%, 59%);
-    color: hsl(31, 66%, 93%);
+    background: var(--social-media-and-grow-followers-cards-color);
+    color: var(--primary-font-color);
 }
 
 section div:nth-child(3),
 section div:last-child{
-    background: hsl(39, 100%, 71%);
+    background: var(--write-your-content-and-maintain-a-consistent-card-color);
     
 }
 
 section div:nth-child(2),
 section div:nth-child(6){
-    background: hsl(0, 0%, 100%);
+    background: var(--manage-multiple-and-56-card-color);
 }
 
 /*Create and Schedule*/
 section div:nth-child(7){
-    background: hsl(31, 66%, 93%);
+    background: var(--create-and-schedule-card-color);
     grid-column: 1 / 2;
     grid-row: 1 / -6;
 
@@ -88,12 +116,12 @@ section div:nth-child(7) h2{
 
 section div:nth-child(7) span{
     font-style: italic;
-    color: hsl(256, 67%, 59%);
+    color: var(--secundary-highlight-color);
 }
 
 /*Schedule to social Media*/
 section div:nth-child(4){
-    background: hsl(254, 88%, 90%);
+    background: var(--schedule-to-social-card-color);
     grid-column: 4 / -1;
     grid-row: 1 / -4;
 
@@ -103,8 +131,6 @@ section div:nth-child(4){
     font-size: clamp(.8rem, calc(2vw + 1rem), 2rem);
 
     overflow: hidden;
-
-    /* display: block; */
 
     display: flex;
     flex-flow: column nowrap;
@@ -135,8 +161,8 @@ section div:first-child{
 }
 
 section div:first-child h1{
-    padding-top: .5em;
-    padding-bottom: .2em;
+    padding-top: min(.5em, 4%);
+    padding-bottom: min(.2em, 3%);
 }
 
 section div:first-child span{
@@ -145,7 +171,7 @@ section div:first-child span{
 
 #ten-times{
     font-style: normal;
-    color: hsl(62, 100%, 80%);
+    color: var(--first-highlight-color);
 }
 
 
@@ -155,7 +181,7 @@ section div:nth-child(5){
     grid-column: 3 / -1;
     grid-row: 8 / -1;
 
-    padding: 1.2em;
+    padding: min(1.2em, 5%);
 
     box-sizing: border-box;
 
@@ -188,7 +214,7 @@ section div:nth-child(6){
     grid-column: 2 / 3;
     grid-row: 8 / -1;
 
-    padding: 1em;
+    padding: min(1rem, 5%);
     text-align: start;
 
     box-sizing: border-box;
@@ -275,9 +301,6 @@ section div:nth-child(3) img{
     max-width: 190px;
     min-width: 185px;
     height: auto;
-
-    /*max-width: 40%;
-    max-height: auto;*/
 }
 
 #audience-growth{
@@ -312,17 +335,6 @@ section div:nth-child(3) img{
     section div:first-child{
         grid-column: 1 / 3;
         grid-row: 1 / 3;
-
-        text-align: center;
-        font-size: 2rem;
-
-        display: flex;
-        flex-flow: column nowrap;
-        align-items: center;
-    }
-
-    section div:first-child span{
-        font-style: italic;
     }
 
     /*Schedule to social Media*/
@@ -351,9 +363,6 @@ section div:nth-child(3) img{
         grid-column: 2 / -1;
         grid-row: 4 / 5;
 
-        display: flex;
-        flex-flow: row nowrap;
-        align-items: center;
         justify-content: space-around;
         
     }
@@ -366,29 +375,13 @@ section div:nth-child(3) img{
 
     /*Create and Schedule*/
     section div:nth-child(7){
-        background: hsl(31, 66%, 93%);
         grid-column: 1 / 2;
         grid-row: 5 / 7;
-
-        padding: 20px;
-
-        overflow: hidden;
-
-        display: flex;
-        flex-flow: column nowrap;
-        align-items: center;
-        justify-items: center;
-        gap: 20px;
     }
 
     section div:nth-child(7) p{
         text-align: start;
         font-size: 2rem;
-    }
-
-    section div:nth-child(7) span{
-        font-style: italic;
-        color: hsl(256, 67%, 59%);
     }
 
     /*Write your content*/
@@ -437,29 +430,13 @@ section div:nth-child(3) img{
 
     /*Create and Schedule*/
     section div:nth-child(7){
-        background: hsl(31, 66%, 93%);
         grid-column: 1 / 2;
         grid-row: 5 / 7;
-
-        padding: 20px;
-
-        overflow: hidden;
-
-        display: flex;
-        flex-flow: column nowrap;
-        align-items: center;
-        justify-items: center;
-        gap: 20px;
     }
 
     section div:nth-child(7) p{
         text-align: start;
         font-size: 2rem;
-    }
-
-    section div:nth-child(7) span{
-        font-style: italic;
-        color: hsl(256, 67%, 59%);
     }
 
     /*Write your content*/
@@ -472,11 +449,6 @@ section div:nth-child(3) img{
     section div:nth-child(5){
         grid-column: 1 / 3;
         grid-row: 7 / 8;
-
-        display: flex;
-        flex-flow: row nowrap;
-        align-items: center;
-        justify-content: space-around;
         
     }
 
@@ -511,17 +483,6 @@ section div:nth-child(3) img{
     section div:first-child{
         grid-column: 1;
         grid-row: 1 / 3;
-
-        text-align: center;
-        font-size: 2rem;
-
-        display: flex;
-        flex-flow: column nowrap;
-        align-items: center;
-    }
-
-    section div:first-child span{
-        font-style: italic;
     }
 
     /*Manage multiple accounts*/
@@ -543,7 +504,6 @@ section div:nth-child(3) img{
 
     /*Schedule to social Media*/
     section div:nth-child(4){
-        background: hsl(254, 88%, 90%);
         grid-column: 1;
         grid-row: 5 / 7;
     }
@@ -574,12 +534,6 @@ section div:nth-child(3) img{
     section div:nth-child(7){
         grid-column: 1;
         grid-row: 10 / 11;
-
-        display: flex;
-        flex-flow: column nowrap;
-        align-items: center;
-        justify-items: center;
-        gap: 1.5rem;
     }
 
     section div:nth-child(7) img{
