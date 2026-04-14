@@ -54,6 +54,10 @@ body{
     flex-flow: column wrap;
     align-items: center;
     justify-content: space-around;
+
+    transition-duration: .4s;
+    transition-timing-function: ease;
+    transition-property: 'background';
     
 }
 
@@ -118,9 +122,9 @@ input:checked + .slider{
     background-color: #2196F3;
 }
 
-input:focus + .slider {
+/* input:focus + .slider {
   box-shadow: 0 0 1px #2196F3;
-}
+} */
 
 input:checked + .slider:before {
     content: url('./assets/images/dark_mode_24dp_E3E3E3_FILL1_wght400_GRAD0_opsz24.svg');
