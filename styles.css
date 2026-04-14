@@ -32,7 +32,7 @@
     --body-bg-color: hsl(0, 0%, 4%);
     --write-your-content-and-maintain-a-consistent-card-color: hsl(104, 62%, 46%);
     --create-and-schedule-card-color: hsl(93, 72%, 58%);
-    --manage-multiple-and-56-card-color: hsl(105, 9%, 18%);
+    --manage-multiple-and-56-card-color: hsl(186, 70%, 74%);
 
     --primary-font-color: hsl(0, 6%, 90%);
     --secundary-font-color: hsl(0, 0%, 86%);
@@ -78,6 +78,13 @@ main{
 
 main div{
     border-radius: 10px;
+    transition-duration: .4s;
+    transition-timing-function: ease;
+    transition-property: 'scale';
+}
+
+main div:hover{
+    scale: .9;
 }
 
 /*dark mode switch*/
